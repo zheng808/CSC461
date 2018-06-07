@@ -1,0 +1,207 @@
+
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+        <title>Project 1</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<script src="map.js"></script>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+</style>
+
+	</head>
+	<body>
+           <!-- Load Facebook SDK for JavaScript -->
+         <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+		
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Design And Analysis on Real-Time Systems</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+				
+                <!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="hardware.html">Hardware</a></li>
+								<li><a href="phase1.html">Phase1</a></li>
+								<li><a href="phase2.html">Phase2</a></li>
+								<li><a href="result.html">CPU Utilization</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>Phase 2</h2>
+                                <p>Phase 2 of the project requires the following components to be connected onto a base station and a remote station:
+                                <br>
+                                 One ATMega 2560 board
+                                <br>
+                                 Two servos
+                                <br>
+                                 One AC adapter
+                                <br>
+                                 One pan-and-tilt kit
+                                <br>
+                                 One joysticks
+                                <br>
+                                 One laser pointer
+                                <br>
+                                 One light sensor
+                                <br>
+                                 One LCD display
+                                <br>
+                                 Many wires
+                                <br>
+                                Two HC-06 bluetooth modules
+                                <br>
+                                One Roomba robot
+                                </p>
+							</div>
+						</header>
+                    
+                    
+				<!-- Content -->	
+							<div class="wrapper">
+								<div class="inner">
+									<h3 class="major">4.1 System OverView
+									</h3>
+									<p>The overall design for phase 2 was to separate the single station into a base station and a remote state, and build a connection between the two stations through Bluetooth. In addition, time-triggered architecture(TTA) is used in order to have smooth control of our system for phase 2. TTA sets up a specific period for each task instead of setting up a single delay for all components. However, users need to find out an ideal period for a specific task. </p>
+									</br></br>
+                        
+									<h3 class="major">4.1.1 Remote Station
+                                    </h3>
+                                    <p>The remote station controls the motion of the pan-and-tilt kit, and turns laser on or off through bluetooth communication. A Slave Mode bluetooth is attached to the remote station to receive the formatted joystick values from base station, details about bluetooth communication will be discussed in the later section. After separating into two stations, wiring for each station becomes much simpler. The following diagram 4.1.1.1 shows the wiring of the remote station. 
+                                    </p>
+                                    <img src="photos/remotestation.jpg" width="850px">
+                                    <p style="text-align:center"> Figure 4.1.1.1 Circuit Diagram for Remote Station </p>
+                                    <br>
+                                    <p>Figure 4.1.1.2 below shows the final assembly of remote station. The circuit was a lot cleaner than the phase 1 circuit. </p>
+                                    <img src="photos/hard_remote.JPG" width="850px">
+                                    <p style="text-align:center">Figure 4.1.1.2. Final Assembly of Remote Station</p>
+                                    <br>
+                                    <p>For phase 2, there is another remote station we need to send control signal to, that is the Roomba robot. We need to demonstrate we can control both servos and Roomba remotely; however, the Roomba robot has already mounted the teaching assistant’s Arduino board which is loaded with a Real-Time Operating System(ROTS) to handle communications and drive the Roomba, so we can not mount our own remote station to the Roomba. Due to the limitation of 2 bluetooth modules, we demonstrated controlling servos and Roomba through bluetooth separately. 
+                                    </p>
+                                    <br><br>
+                                   <h3 class="major">4.1.2 Base Station
+                                    </h3>
+                                    <p>The base station is a command sender that uses TTA to send commands with a specific scheduled time period. The Master Mode bluetooth module is attached to the base station to send commands to the slave module. The joystick is attached, and remotely control the movement of pan-and-tilt kit servos. Joystick connects to two analogs pins for x y values, and one digital pin for button push. The light sensor is also attached to breadboard, detected if the laser is pointed at base station. The following Figure 4.1.2.1 shows the high level circuit diagram of the base station. 
+                                    </p>
+                                    <img src="photos/base_circuit.jpg" width="850px">
+                                    <p style="text-align:center">Figure 4.1.2.1 Circuit Diagram for Base Station</p>
+                                    <br>
+                                    <p>The following Figure 4.1.2.1 shows the final completion of Base Station for phase 2.</p>
+                                    <br>
+                                    <img src="photos/phase2_base.jpeg" width="850px">
+                                    <p style="text-align:center">Figure 4.1.2.1 Base station with joystick</p>
+                                    <br>
+                                    <h3 class="major">4.2 Bluetooth Communication
+                                    </h3>
+                                    <p>The easy part of bluetooth communication is that once two modules(master and slave) are correctly configured, they will be automatically paired when both of them are powered up and within a searchable range. When the modules are paired up, sending data to another station will be just writing data to the UART ports that the bluetooth module is connected to. An Arduino library function Serial.write() is mainly used to send commands.
+                                    </p><br>
+                                    <p>Sending commands to the Roomba station is easier, because the Roomba station only receives single character as commands. The Serial.write() function we used can only send one character at a time, which works for sending Roomba commands. Whereas the servos remote station requires multiple input values(x,y, and button push), the input values are decided to be formatted into a string. Sending a string using the Serial.write() function became troublesome, therefore, another approach is used instead. 
+                                    </p>
+                                    <p>Reading the joystick values sent from the base station takes several steps(see Figure 4.2.1 for remote station code):
+                                    </p>
+                                    1. Format string on base station, each value is separated by a comma, and string ends on a ‘\n’ character
+                                    <br><br>
+                                    2 Use Serial.readStringUntil(‘\n’) to read one input string
+                                     <br><br>
+                                    3 Tokenize each value by separating them by commas
+                                    <br><br>
+                                    4 Assign each token to correct variables
+                                    <br><br>
+                                    <img src="photos/code_snippit.png" width="850px">
+                                    <p style="text-align:center">Figure 4.2.1</p>
+                                    <br>
+                                    <p>Another problem that we encountered for bluetooth communication was a timing problem. When the base station send commands at a rate that is faster than the remote station receive rate, significant delay or unexpected behaviors will happen. Therefore, we must ensure that sending rate is less than receiving rate. But only using a delay() function cannot guarantee the sending or receiving rate, some code may run faster or slower than others, so we cannot rely on the delay() function. Using Time Triggered Architecture solved this problem, details will be discussed in the following section.
+                                    </p>
+                                    <br><br>
+                                    <h3 class="major">4.3 Time Triggered Architecture
+                                    </h3>
+                                    <p>Using TTA is very critical and significant in this project, as it can schedule tasks periodically in a very precise manner. Unlike the delay() function the TTA’s Scheduler_StartTask() function[3] can schedule tasks to be executed at precise time periods, which guarantees the running rate of each task and makes the system more deterministic.
+                                    </p><br>
+                                    <p>When testing with sending commands to the Roomba using TTA with period 10ms, we experienced about 4 seconds delay between moving the joysticks and observing the response movement from the Roomba. The problem was caused by sending commands too quickly, there are delays for data to transfer through bluetooth, and delays for the Arduino command to the Roomba. Therefore, we must consider these latencies and should not send commands faster than the total latency, otherwise, there will be more command sending to the Roomba than it can handle, and buffer overflow will occur. After testing, we decided that using the period of 30ms is ideal, Roomba’s receiving rate is faster than sending rate and latency between joystick movement and Roomba movement cannot be sensed by human eyes.</p><br>
+                                    <p>Using TTA also helps with smoothing servo movements, because it can be used to schedule tasks to run very frequent. However, running tasks too fast isn’t good at all because it will waste cpu cycles and increase power consumption.
+                                    </p><br>
+								</div>
+							</div>
+
+            </div>
+</section>
+                  
+
+<!-- Scripts -->
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+            
+            <script>
+     var slideIndex = 1;
+     showDivs(slideIndex);
+
+      function plusDivs(n) {
+      showDivs(slideIndex += n);
+      }
+
+      function currentDiv(n) {
+      showDivs(slideIndex = n);
+      }
+      function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      if (n > x.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+      }  
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-white", "");
+      }
+      x[slideIndex-1].style.display = "block";  
+     dots[slideIndex-1].className += " w3-white";
+      }
+   </script>
+
+    </body>
+</html>
