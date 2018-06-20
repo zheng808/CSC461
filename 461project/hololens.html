@@ -83,15 +83,35 @@
                                     <img src="photos/hololens_tv.jpg" width="850"><!-- https://mfgtalkradio.com/the-hololens-and-its-impact-on-manufacturers/ -->
                                     <p style="text-align:center">Figure 2</p>
                                     <br>
-                                    <h3 class="major">How Does it work?</h3>
+                                    <h3 class="major">Hardware support</h3>
                                     <p> Hololens has installed many cameras and sensors to capture information about the surrounding environment.
                                         Four environment understanding cameras are used to quickly scan the environment in front of the user within a range of 120x120 degrees,
                                         these cameras are the keys for head tracking and surface reconstruction.
                                         The depth camera is used to draw the digitalized surroundings by measuring the distance and depth. The depth camera also supports the Kinect technology,
                                         which uses a combination of camera data and infrared sensing data to capture user body motion and gestures.
+										In addition, Hololens has ambient light sensors to optimize visual quality in different light conditions. Cameras and sensors layout is shown in Figure 3 below.
                                     </p>
+									<img src="photos/hololens_sensors.png" width="850"><!-- https://proquest-safaribooksonline-com.ezproxy.library.uvic.ca/book/animation-and-3d/9781787281943 -->
+									<p style="text-align:center">Figure 3</p>
+									<p>
+										The most interesting part of Hololens is it's lenses. Hololens has a pair of translucient lenses,
+										so the lenses will not block users from seeing the real world. To visualize virtual objects generate by Hololens,
+										Hololens will emit light from its camera, the light will travel through the lenses, then the light will be reflected
+										and projected into users eyes as particles of light. Images projected are 2D images; however, each lens will project light into different images to create
+										a stereoscopic illusion of 3D.
+									</p>
+									<br>
+									<h3 class="major">How Does it work?</h3>
+										The process:
+										<li>Hololens uses sensors and cameras to scan the environment and user actions</li>
+										<li>Hololens constructs a 3D model of the environment using the captured data </li>
+										<li>Hololens calculates head position, and orientation, then determines objects to be rendered</li>
+										<li>Hololens emits light with cameras to the lenses</li>
+										<li>Each lens projects light into different images</li>
+										<li>User sees 3D objects through both lenses, speaker outputs spatial sound, which results in MR experience.</li>
 
-
+										<br>
+										The steps are easy to understand, however, some steps are challenging to achieve.
 								</div>
 							</div>
 
