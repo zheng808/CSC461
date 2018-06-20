@@ -43,7 +43,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.html">Design And Analysis on Real-Time Systems</a></h1>
+						<h1><a href="index.html">Augmented Reality</a></h1>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
@@ -55,10 +55,7 @@
 							<h2>Menu</h2>
 							<ul class="links">
 								<li><a href="index.html">Home</a></li>
-								<li><a href="hardware.html">Hardware</a></li>
-								<li><a href="hololens.html">Phase1</a></li>
-								<li><a href="phase2.html">Phase2</a></li>
-								<li><a href="result.html">CPU Utilization</a></li>
+								<li><a href="hololens.html">Hololens</a></li>
 							</ul>
 							<a href="#" class="close">Close</a>
 						</div>
@@ -68,35 +65,35 @@
 					<section id="wrapper">
 						<header>
 							<div class="inner">
-                                <h2>4.4 CPU Utilization</h2>
-                                <p style="text-transform:none">As part of Phase 2, we are required to observe and calculate the CPU utilization time for our system. The following results are observed from the remote station. The remote station has two scheduled tasks, readBluetoothInput(), and runServos(). 
-                                <br> <br>
-                                To measure the execution time for each task, a logical analyzer is used. A logical analyzer is set to observe two digital pins on the Arduino board, each pin correspond to one scheduled task. When a task starts, a line of code will execute to pull the digital pin HIGH, and just before the task finishes, there will be another line of code to pull the digital pin LOW. As a result, we can observe the execution time and period for each task.
-                                <br> <br>
-                                The measured average execution time for the runServo() task is about 0.2727 ms, and period is about 30 ms. A sample screenshot is shown below in Figure 4.4.1:
-                                </p>
-                                 <br><br>
-                                <img src="photos/utliz1.png" width="850px">
-                                <p style="text-align:center">Figure 4.4.1 runServo execution time</p><br><br>
-                                <p>THe measured average execution time for the readBluetoothInput() task is about 19.58 μs, and period is about 30 ms. A sample screenshot is shown below in Figure 4.4.2:
-                                </p>
-                                <img src="photos/utli2.png" width="850px">
-                                <p style="text-align:center">Figure 4.4.1 runServo execution time</p><br><br>
-                                <p>The CPU Utilization is calculated as follow:
-                                  <br><br>
-                                T: the period   <br><br>
-                                C: total execution time of all scheduled tasks  <br><br>
-                                U: CPU utilization percentage  <br><br>
-
-                                T = 30.1 + 29.48 = 59.58 ms   <br><br>
-                                C = 0.2727 +0.01958 = 0.29228 ms   <br><br>
-                                U = 0.29228/59.58 = 0.0049 = 0.49%   <br><br>
-                                    
-                                Based on the samples we used, the CPU utilization time is about 0.5%, and 99.5% of the time, CPU is idle.
-                                </p>
-							</div>
+								<h2>Microsoft Hololens</h2>
+                                <p>Hololens is a pari of mixed reality smartglasses that is developed by Microsoft and first released in 2016.</p>
+                                <img src="photos/hololens_overview.jpg" width="850"><!--https://www.microsoft.com/en-us/hololens -->
+                                <p style="text-align:center">Figure 1</p>
+                            </div>
 						</header>
                     
+                    
+				<!-- Content -->	
+							<div class="wrapper">
+								<div class="inner">
+									<h3 class="major">Mixed Reality</h3>
+                                    <p>Hololens has been categorized as an mixed reality (MR) device instead of augmented reality (AR) a device. MR is a very similar idea as AR, except that it's more advanced to support virtual object interacting with real world objects.
+                                    For example, if a virtual TV screen is set to attach to a wall, the virtual TV screen will stay in the same place with respect to the user's view, see Figure 2. This way, Hololen will create an illusion to make user believe the virtual object exist in the real world.
+                                    </p>
+                                    <img src="photos/hololens_tv.jpg" width="850"><!-- https://mfgtalkradio.com/the-hololens-and-its-impact-on-manufacturers/ -->
+                                    <p style="text-align:center">Figure 2</p>
+                                    <br>
+                                    <h3 class="major">How Does it work?</h3>
+                                    <p> Hololens has installed many cameras and sensors to capture information about the surrounding environment.
+                                        Four environment understanding cameras are used to quickly scan the environment in front of the user within a range of 120x120 degrees,
+                                        these cameras are the keys for head tracking and surface reconstruction.
+                                        The depth camera is used to draw the digitalized surroundings by measuring the distance and depth. The depth camera also supports the Kinect technology,
+                                        which uses a combination of camera data and infrared sensing data to capture user body motion and gestures.
+                                    </p>
+
+
+								</div>
+							</div>
 
             </div>
 </section>
