@@ -102,16 +102,53 @@
 									</p>
 									<br>
 									<h3 class="major">How Does it work?</h3>
-										The process:
-										<li>Hololens uses sensors and cameras to scan the environment and user actions</li>
-										<li>Hololens constructs a 3D model of the environment using the captured data </li>
-										<li>Hololens calculates head position, and orientation, then determines objects to be rendered</li>
-										<li>Hololens emits light with cameras to the lenses</li>
-										<li>Each lens projects light into different images</li>
-										<li>User sees 3D objects through both lenses, speaker outputs spatial sound, which results in MR experience.</li>
+                                    The process:
+                                    <li>Hololens uses sensors and cameras to scan the environment and user actions</li>
+                                    <li>Hololens constructs a 3D model of the environment using the captured data </li>
+                                    <li>Hololens calculates head position, and orientation, then determines objects to be rendered</li>
+                                    <li>Hololens emits light with cameras to the lenses</li>
+                                    <li>Each lens projects light into different images</li>
+                                    <li>User sees 3D objects through both lenses, speaker outputs spatial sound, which results in MR experience.</li>
 
-										<br>
-										The steps are easy to understand, however, some steps are challenging to achieve.
+                                    <br>
+                                    <p>The steps are easy to understand, however, some steps are challenging to achieve. As discussed in the previous section,
+                                    Hololens has many cameras and sensors, therefore, it has to deal with a large amount of input data. The device also needs
+                                    to track user's head position, orientation, and movement speed altogether to generate different objects views in different angles.
+                                    Overall, there will be terabytes of data that needs to be processed, and Hololens needs to continuously handle these data in <b><u><i>real time</i></u></b>
+                                        in order to provide MR experience to users.</p>
+
+                                    <p>
+                                    Hololens requires a large amount of processing power as it is designed to process millions of data items in milliseconds.
+                                    However, since Hololen is a portable device, it has spatial limitation to hardware to be installed. Hololens has all of its CPU,
+                                    GPU, RAM, WiFi chip, and bluetooth chip installed on a tiny board. Hardware spec can be viewed in Figure 4 below. Hololens uses a 32-bit intel based CPU with clock
+                                    speed of 1.04GHz; it is obviously not a super processor, how can Hololens meet the real time requirements?
+                                    </p>
+
+                                    <br>
+                                    <img src="photos/hololens_spec.jpg" width="850"><!--https://www.windowscentral.com/microsoft-hololens-processor-storage-and-ram-->
+                                    <p style="text-align:center">Figure 4</p>
+
+                                    <p>
+                                    It is noticeable in Figure 4 that Hololens has a special processing unit called the HPU (Holographic processing unit), which is designed for
+                                    holographic processing as its name indicates. The HPU is reported to process terabytes of Hololens sensor data in real time. As the result, CPU is
+                                    mainly used for OS tasks and scheduling, understanding the surrounding environment and rendering 3D objects into user's view are all handled by
+                                    Microsoft's custom made HPU. The HPU has the power to translate Hololens sensor data into much smaller size data to process. Unfortunately, the HPU is also
+                                    called the "magic black box thingy", details about HPU are not revealed by Microsoft.
+                                    </p>
+                                    <br>
+                                    <h3 class="major">Summary</h3>
+                                    <p>
+                                    In summary, Hololen is a power full device that can bring Mixed Reality experience to users. Its capability of merging different sensors, cameras
+                                    and other required hardware components into a small piece of head equipment is stunning. Hololens' magic black box HPU is the key for the success of this
+                                    device; although details are not revealed to the public, Hololens' performance and potentials has prooven to the public that modern technology is capable of processing
+                                    terabytes of data in real time.
+                                    </p>
+                                    <br>
+                                    <h3 class="major">References</h3>
+                                    <li>https://www.microsoft.com/en-us/hololens</li>
+                                    <li>https://mfgtalkradio.com/the-hololens-and-its-impact-on-manufacturers/</li>
+                                    <li>https://proquest-safaribooksonline-com.ezproxy.library.uvic.ca/book/animation-and-3d/9781787281943</li>
+                                    <li>https://www.windowscentral.com/microsoft-hololens-processor-storage-and-ram</li>
 								</div>
 							</div>
 
