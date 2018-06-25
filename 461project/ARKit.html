@@ -1,0 +1,148 @@
+
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+        <title>Project 1</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<script src="map.js"></script>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+</style>
+
+	</head>
+	<body>
+           <!-- Load Facebook SDK for JavaScript -->
+         <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+		
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Design And Analysis on Real-Time Systems</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+				
+                <!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="hololens.html">Hololens</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>Apple ARKit</h2>
+                    <p>The most common kinds of AR experience by apple devices is to display a view from an back-facing camera. ARKit provides the capability to match the real-world coordinate and integrate the virtual content into it. The AR world can recognizing objects and images in the users's environment.</p>
+							</div>
+						</header>
+                    
+                    
+				<!-- Content -->	
+							<div class="wrapper">
+								<div class="inner">
+									<h3 class="major">Creation of ARKit app
+									</h3>
+									<p>First step is to add the ARKit scene to the Swift project. All virtual objects in ARkit are rendered according to the relative position of carema. Apple releases the abstract class to configure the camera. The class ARWorldTrackingConfiguration can enable the carmea and set up the scene for AR. The following screenshot shows the how the configuration works before adding the any 3D objects to the scene</p>
+                  <img src="photos/code.jpg" height="400px">
+									</br></br>
+									<h3 class="major">Adding a 3D object</h3>
+                                    <p>A 3D object model can be added by using a subclass of SceneKit where developers can create an object that points to the 3D image file. The 3D image file can act as a child node of SceneKit. The initilization of 3D image object must be done after the AR scene setup configuration. This part has been magically handled by the previous ARWorld setup. The following screenshot shows that a 3D drone has displayed in real-world with default position.  
+                                    </p>
+                                     <img src="photos/drone.jpg">
+                                    <br>
+                                    <p>
+                                    In addition, ARKit performance for rendering objects can be optmized by Unity Engine. The thrid party tool allows developers to create virtual objects with advanced graphics. 
+                                    </p>
+                                    <br><br>
+                                   <h3 class="major">Recognizing Images in an AR Experience
+                                    </h3>
+                                    <p>ARKit provides the feature to detect known objects in the users' environment and use their coordinates to place AR content. Image detection has been done by its referenced image, position and orientation. This technology has been greatly used by cases in daily life. For example, the technology can be used to identify bus schedules and routes where users can scan local bus signs. 
+                                    </p>
+                                    <br>
+                                    <p>However, image recongition may have encountered obstacles because real-world environments will have uncontrollable variables that impact your image detection experience. Thus, there is an limitation of ARKit's image recognition capabilities. For example, the lack of light might affect the image recognition in an AR experience.</p>
+                                    <h3 class="major">IKEA Place App
+                                    </h3>
+                                    <p>Ikea releases an app that can help buyers to visualize its products at home by placing the digital object into your camera view. Before go to the store and buy furniture from the retailer. Users can place any thing to just see how it all looks. To use the app, simply scan the floor of a room, browse a list of products available in the app, and select the product to wherever you would like to place. 
+                                    </p>
+                                    <p>The following image shows that how IKEA app integrates into our life, and what IKEA does to change users' buying expereince.</p>
+                                    <img src="photos/ikea.jpg">
+            
+								</div>
+							</div>
+
+            </div>
+</section>
+                  
+
+<!-- Scripts -->
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+            
+            <script>
+     var slideIndex = 1;
+     showDivs(slideIndex);
+
+      function plusDivs(n) {
+      showDivs(slideIndex += n);
+      }
+
+      function currentDiv(n) {
+      showDivs(slideIndex = n);
+      }
+      function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      if (n > x.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+      }  
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-white", "");
+      }
+      x[slideIndex-1].style.display = "block";  
+     dots[slideIndex-1].className += " w3-white";
+      }
+   </script>
+
+    </body>
+</html>

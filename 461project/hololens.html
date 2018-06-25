@@ -1,0 +1,196 @@
+
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+        <title>Project 1</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<script src="map.js"></script>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+</style>
+
+	</head>
+	<body>
+           <!-- Load Facebook SDK for JavaScript -->
+         <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+		
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Augmented Reality</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+				
+                <!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="hololens.html">Hololens</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>Microsoft Hololens</h2>
+                                <p>Hololens is a pari of mixed reality smartglasses that is developed by Microsoft and first released in 2016.</p>
+                                <img src="photos/hololens_overview.jpg" width="850"><!--https://www.microsoft.com/en-us/hololens -->
+                                <p style="text-align:center">Figure 1</p>
+                            </div>
+						</header>
+                    
+                    
+				<!-- Content -->	
+							<div class="wrapper">
+								<div class="inner">
+									<h3 class="major">Mixed Reality</h3>
+                                    <p>Hololens has been categorized as an mixed reality (MR) device instead of augmented reality (AR) a device. MR is a very similar idea as AR, except that it's more advanced to support virtual object interacting with real world objects.
+                                    For example, if a virtual TV screen is set to attach to a wall, the virtual TV screen will stay in the same place with respect to the user's view, see Figure 2. This way, Hololen will create an illusion to make user believe the virtual object exist in the real world.
+                                    </p>
+                                    <img src="photos/Hololens_tv.jpg" width="850"><!-- https://mfgtalkradio.com/the-hololens-and-its-impact-on-manufacturers/ -->
+                                    <p style="text-align:center">Figure 2</p>
+                                    <br>
+                                    <h3 class="major">Hardware support</h3>
+                                    <p> Hololens has installed many cameras and sensors to capture information about the surrounding environment.
+                                        Four environment understanding cameras are used to quickly scan the environment in front of the user within a range of 120x120 degrees,
+                                        these cameras are the keys for head tracking and surface reconstruction.
+                                        The depth camera is used to draw the digitalized surroundings by measuring the distance and depth. The depth camera also supports the Kinect technology,
+                                        which uses a combination of camera data and infrared sensing data to capture user body motion and gestures.
+										In addition, Hololens has ambient light sensors to optimize visual quality in different light conditions. Cameras and sensors layout is shown in Figure 3 below.
+                                    </p>
+									<img src="photos/hololens_sensors.png" width="850"><!-- https://proquest-safaribooksonline-com.ezproxy.library.uvic.ca/book/animation-and-3d/9781787281943 -->
+									<p style="text-align:center">Figure 3</p>
+									<p>
+										The most interesting part of Hololens is it's lenses. Hololens has a pair of translucient lenses,
+										so the lenses will not block users from seeing the real world. To visualize virtual objects generate by Hololens,
+										Hololens will emit light from its camera, the light will travel through the lenses, then the light will be reflected
+										and projected into users eyes as particles of light. Images projected are 2D images; however, each lens will project light into different images to create
+										a stereoscopic illusion of 3D.
+									</p>
+									<br>
+									<h3 class="major">How Does it work?</h3>
+                                    The process:
+                                    <li>Hololens uses sensors and cameras to scan the environment and user actions</li>
+                                    <li>Hololens constructs a 3D model of the environment using the captured data </li>
+                                    <li>Hololens calculates head position, and orientation, then determines objects to be rendered</li>
+                                    <li>Hololens emits light with cameras to the lenses</li>
+                                    <li>Each lens projects light into different images</li>
+                                    <li>User sees 3D objects through both lenses, speaker outputs spatial sound, which results in MR experience.</li>
+
+                                    <br>
+                                    <p>The steps are easy to understand, however, some steps are challenging to achieve. As discussed in the previous section,
+                                    Hololens has many cameras and sensors, therefore, it has to deal with a large amount of input data. The device also needs
+                                    to track user's head position, orientation, and movement speed altogether to generate different objects views in different angles.
+                                    Overall, there will be terabytes of data that needs to be processed, and Hololens needs to continuously handle these data in <b><u><i>real time</i></u></b>
+                                        in order to provide MR experience to users.</p>
+
+                                    <p>
+                                    Hololens requires a large amount of processing power as it is designed to process millions of data items in milliseconds.
+                                    However, since Hololen is a portable device, it has spatial limitation to hardware to be installed. Hololens has all of its CPU,
+                                    GPU, RAM, WiFi chip, and bluetooth chip installed on a tiny board. Hardware spec can be viewed in Figure 4 below. Hololens uses a 32-bit intel based CPU with clock
+                                    speed of 1.04GHz; it is obviously not a super processor, how can Hololens meet the real time requirements?
+                                    </p>
+
+                                    <br>
+                                    <img src="photos/hololens_spec.jpg" width="850"><!--https://www.windowscentral.com/microsoft-hololens-processor-storage-and-ram-->
+                                    <p style="text-align:center">Figure 4</p>
+
+                                    <p>
+                                    It is noticeable in Figure 4 that Hololens has a special processing unit called the HPU (Holographic processing unit), which is designed for
+                                    holographic processing as its name indicates. The HPU is reported to process terabytes of Hololens sensor data in real time. As the result, CPU is
+                                    mainly used for OS tasks and scheduling, understanding the surrounding environment and rendering 3D objects into user's view are all handled by
+                                    Microsoft's custom made HPU. The HPU has the power to translate Hololens sensor data into much smaller size data to process. Unfortunately, the HPU is also
+                                    called the "magic black box thingy", details about HPU are not revealed by Microsoft.
+                                    </p>
+                                    <br>
+                                    <h3 class="major">Summary</h3>
+                                    <p>
+                                    In summary, Hololen is a power full device that can bring Mixed Reality experience to users. Its capability of merging different sensors, cameras
+                                    and other required hardware components into a small piece of head equipment is stunning. Hololens' magic black box HPU is the key for the success of this
+                                    device; although details are not revealed to the public, Hololens' performance and potentials has prooven to the public that modern technology is capable of processing
+                                    terabytes of data in real time.
+                                    </p>
+                                    <br>
+                                    <h3 class="major">References</h3>
+                                    <li>https://www.microsoft.com/en-us/hololens</li>
+                                    <li>https://mfgtalkradio.com/the-hololens-and-its-impact-on-manufacturers/</li>
+                                    <li>https://proquest-safaribooksonline-com.ezproxy.library.uvic.ca/book/animation-and-3d/9781787281943</li>
+                                    <li>https://www.windowscentral.com/microsoft-hololens-processor-storage-and-ram</li>
+								</div>
+							</div>
+
+            </div>
+</section>
+                  
+
+<!-- Scripts -->
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+            
+            <script>
+     var slideIndex = 1;
+     showDivs(slideIndex);
+
+      function plusDivs(n) {
+      showDivs(slideIndex += n);
+      }
+
+      function currentDiv(n) {
+      showDivs(slideIndex = n);
+      }
+      function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      if (n > x.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+      }  
+      for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" w3-white", "");
+      }
+      x[slideIndex-1].style.display = "block";  
+     dots[slideIndex-1].className += " w3-white";
+      }
+   </script>
+
+    </body>
+</html>
