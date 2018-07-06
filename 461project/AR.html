@@ -21,7 +21,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.html">Design And Analysis on Real-Time Systems</a></h1>
+						<h1><a href="index.html">AUGMENTED REALITY</a></h1>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
@@ -45,47 +45,75 @@
 					<section id="wrapper">
 						<header>
 							<div class="inner">
-								<h2>hardware</h2>
+								<h2>EVALUATION</h2>
 							</div>
 						</header>
 
 						<!-- Content -->
 							<div class="wrapper">
 								<div class="inner">
-									<h3>2.1 JoySticks
-									</h3>
-									<p>Joystick setup and wiring was easy. A joystick has 5 pins: GND, VCC, VRx, VRy, and SW. VCC and GND pins are connected to +5V and ground respectively. VRx and VRy are two pins that transfer x and y values of the joystick. The x y value range of the provided joysticks are from 0 to 1023; therefore, they are connected to two analog pins on the ATMega 2560 board. The last SW pin is for the button press, the value can be either 1 or 0, so it connects to a digital pin on the Arduino board.</p>
-									<img src="photos/joystick.JPG" width="850px">
+									<h3>POTENTIAL FLAWS</h3>
+									<p style="text-transform:none">
+									Both Microsoft hololens and Apple ARkit have some common technology difficulties waited to be solved: </br>
+								    <b>1)</b> Power conumption: Both simultaneous localization and mapping and computer vision which are all caculation heavy tasks are all power consuming. </br>
+								    <b>2)</b> Tracking limited with not enough light: If there is not enough light in the room, it will be hard to find features and tracking will be limited. </br>
+								    <b>3)</b> Localization and mapping accuracy: This will be a huge problem in the future AR area. </br></br>
+								    Only for ARkit: </br>
+								<b>1)</b> Ambient Occlusion: If there is a tree between you and the virtual hologram, the hologram will not be displayed behind the real tree correctly. </br>
+								<b>2)</b> Lack of cross platform ability: Only support iOS system.</br>
+
+								</p>
 									</br></br>
-								    <h3 class="major">2.2 Servo
-                                    </h3>
-									<p>Servo motors are easy to wire; however, assembling the pan-and-tilt kit for the servos takes effort and time, especially when component sizes don’t match and some screws are missing. A  servo motor has three pins: power, signal, and ground. Power and ground pin are connected to +5V and GND respectively, and the signal pin is connected to a pulse-width-modulation(PWM) pin on the Arduino board. PWM is a technique for getting analog results with digital means, which the board can control a servo by sending digital signals. Using PWM helps with smoothing servo movements. As servos can possibly draw more current than the Arduino board pins can support, an additional +5V power supply was used to power up the servos.
-                                    </p>
-									<img src="photos/servo.jpg" width="850px"></img>
+								    <h3>Hololens VS Other Multimedia Technology</h3>
+									<table border="1" width="500">
+										<tr>
+											<td>&nbsp;</td>
+											<td><b>PC</b></td>
+											<td><b>SMART PHONE</b></td>
+											<td><b>HOLOLENS</b></td>
+										</tr>
+										<tr>
+											<td><b>PORTABILITY</b></td>
+											<td style="text-transform:none">Need to sit in front of the computer while using</td>
+											<td style="text-transform:none">Advantage: Convenient to carry</br>
+												Disadvantage: Occupied hands and eyes while using
+											</td>
+											<td style="text-transform: none">
+												Advantage: Convenient to carry and doesn't occupy hands and eyes </br>
+											Disadvantage: It's not very comfortable wearing a big hologram glass </br>
+											Difficulties: Need to be ligher and smaller
+											</td>
+										</tr>
+										<tr>
+											<td><b>INFORMATION INTERACTION</b></td>
+											<td style="text-transform: none">
+												Passive information acquisition based on keyboard and mouse
+											</td>
+											<td>
+												Advantage: Most are touch screen which is more user-friendly; Convenient for recording, taking pics and videos </br>
+												Disadvantage: Need people's direction to input information; Lack of sustainability; No interaction with reality
+											</td>
+											<td>
+												Advantage: Obtain information in real time consistently；Support more convenient gesture recognition; Interaction with reality </br>
+											Disadvantage: Cannot recognize other expression except visual, auditory and gesture </br>
+											Difficulties: Need to improve computation and modeling capability
+											</td>
+										</tr>
+                                    </table>
+
 									</br></br>
 									
-                                    <h3 class="major">2.3 Laser
+                                    <h3 class="major">FUTURE
 									</h3>
-									<p>A Keyes KY-008 laser transmitter module is used in this project.  This module has three pins: S, unlabeled, and minus. As shown in the figure below, the S(bottom) pin is the signal pin, which turns the laser on when signal is high, and off if signal is low. The signal pin is connected to a digital pin on the Arduino board. The minus(top) pin is connected to the ground pin. The unlabeled (center) pin is observed to output the same voltage as the input pin, it is considered to be used for monitoring purposes, therefore this pin is not used in this project. In addition, a 100Ω resistor is used to limit the current flow, which can prevent short circuit when the laser module fails.</p>
-                                    <img src="photos/laser.jpg" width="850"></img>
+									<p style="text-transform: none">There are some screenshots of a video called Hyper-Reality <a href="https://vimeo.com/166807261"><font color="#33CC00">(https://vimeo.com/166807261)</font></a>. This video describes an incredible, frightening, yet very possible potential future infected with AR, as the artist explains,it presents a provocative new vision of the future, where physical and virtual realities have merged, and the city is saturated in media. 
+									</p>
+                                    <img src="1.png" width="850"></img> </br></br>
+                                    <img src="2.png" width="850"></img> </br></br>
+                                    <img src="3.png" width="850"></img> </br></br>
                                    </br></br>
-                                    <h3 class="major">2.4 LCD
-									</h3>
-									<p>The task of setting up LCD was pretty straightforward. LCD display board sits right on the top of Arduino board, the pins need to make sure connect correctly to the ATMega 2560 board. Arduino uses the LiquidCrystal library, and set the following parameters: lcd(8,9,4,5,6,7) so that Arduino library initializes the library by associating LCD pins with the Arduino board pin number.  Arduino needs to begin with lcd(16,2) to set up columns and rows. Afterwards, users need to set up a cursor(0,0) to define where strings start printing.</p>
-                                    <img src="photos/LCD.jpeg" width="850"></img>
+
                                     </br></br>
 
-                                    <h3 class="major">2.5 Light Sensor
-									</h3>
-									<p>In order to detect the intensity of light and darkness, we used a sensor called LDR. The LDR is a special type of resistor that allows higher voltages pass through whenever there is a high intensity of light, and passes a low voltage whenever it is dark [1]. The connection between Arduino and light sensor was not difficult. First of all, LDR needs to connect the analog input pin 0 on Arduino, and another pin connects to the ground from breadboard. A 100K resistor is also connected to the same leg and grounded as well. The following diagram Figure 2.5.1 shows exactly how all circuit connected. </p>
-                                    <img src="photos/LightSensor.png" width="850"></img>
-                                    <p style="text-align:center">Figure2.5.1</p>
-                                    </br></br>
-								
-									<h3 class="major">2.6 Bluetooth Module</h3>
-									<p>The HC-06 Bluetooth module set up initially was a lot hard than another components. We need to configure one of the Bluetooth module to be in Master mode, and the other Bluetooth to be in Slave mode so that they will pair up automatically. The bluetooth configuration guide can be found at [2]. Wiring the bluetooth modules to the Arduino board is not hard, wiring is shown in the following figure 2.6.1 [2]. Bluetooth can connect to any of Arduinos’ UART communication ports. </p>
-                                    <img src="photos/bluetoothe.png" width="850"></img>
-                                     <p style="text-align:center">Figure2.6.1</p>
 								</div>
 							</div>
 
